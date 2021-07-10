@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 ({
-  onAccountsLoaded: function (component, event, handler) {
+  onAccountsLoaded: function (component, event, _helper) {
     var cols = [
       {
         label: "Name",
@@ -28,10 +29,10 @@
     component.set("v.cols", cols);
     component.set("v.rows", event.getParam("accounts"));
   },
-  onRowAction: function (component, event, handler) {
+  onRowAction: function (component, event, _helper) {
     var action = event.getParam("action");
     var row = event.getParam("row");
-    if (action.name == "view_details") {
+    if (action.name === "view_details") {
       var navigation = component.find("navigation");
       navigation.navigate({
         type: "standard__recordPage",
